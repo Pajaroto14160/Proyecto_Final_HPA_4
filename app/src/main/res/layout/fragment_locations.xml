@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_50"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/teal_600"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="24dp"
+        android:text="Hospitales y Farmacias"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_map">
+
+        <View android:layout_width="match_parent" android:layout_height="5dp" android:layout_gravity="center_vertical" android:background="#AAFFFFFF" />
+        <View android:layout_width="5dp" android:layout_height="match_parent" android:layout_gravity="center_horizontal" android:background="#AAFFFFFF" />
+        <View android:layout_width="match_parent" android:layout_height="3dp" android:layout_gravity="top" android:layout_marginTop="64dp" android:background="#88FFFFFF" />
+        <View android:layout_width="3dp" android:layout_height="match_parent" android:layout_gravity="start" android:layout_marginStart="92dp" android:background="#88FFFFFF" />
+
+        <LinearLayout
+            android:id="@+id/pinHospital1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="34dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:background="@drawable/bg_pin_hospital" android:padding="10dp">
+                <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/ic_hospital" android:contentDescription="Hospital Santo Tomás" />
+            </FrameLayout>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:background="@drawable/bg_card" android:paddingHorizontal="7dp" android:paddingVertical="3dp" android:text="H. Santo Tomás" android:textColor="@color/gray_700" android:textSize="10sp" android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pinHospital2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="96dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:background="@drawable/bg_pin_hospital" android:padding="10dp">
+                <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/ic_hospital" android:contentDescription="Hospital del Niño" />
+            </FrameLayout>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:background="@drawable/bg_card" android:paddingHorizontal="7dp" android:paddingVertical="3dp" android:text="H. del Niño" android:textColor="@color/gray_700" android:textSize="10sp" android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/pinPharmacy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="42dp"
+            android:layout_marginBottom="32dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:background="@drawable/bg_pin_pharmacy" android:padding="10dp">
+                <ImageView android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/ic_pharmacy" android:contentDescription="Farmacia" />
+            </FrameLayout>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:background="@drawable/bg_card" android:paddingHorizontal="7dp" android:paddingVertical="3dp" android:text="Farmacia" android:textColor="@color/gray_700" android:textSize="10sp" android:textStyle="bold" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="10dp"
+        android:text="Centros registrados"
+        android:textAppearance="@style/TextAppearance.MediConecta.Section" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerLocations"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="20dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:indeterminateTint="@color/teal_500" />
+    </FrameLayout>
+</LinearLayout>
